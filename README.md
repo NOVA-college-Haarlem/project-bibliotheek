@@ -2,6 +2,17 @@
 
 Dit project draait een PHP-webapplicatie met MariaDB, phpMyAdmin en Mailpit via Docker Compose.
 
+## Voor Studenten
+
+1. Open deze repository op GitHub en klik rechtsboven op de knop Fork.
+2. Bevestig de standaardinstellingen om de fork in je eigen GitHub-account aan te maken.
+3. Open daarna jouw fork, klik op de groene knop Code en kopieer het repository-adres (HTTPS).
+4. Clone jouw fork naar je lokale omgeving met:
+
+	```bash
+	git clone <gekopieerde-repository-url>
+	```
+
 ## Diensten
 
 - Webapp: http://localhost
