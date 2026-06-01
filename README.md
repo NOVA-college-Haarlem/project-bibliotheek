@@ -1,24 +1,22 @@
-# Project Bibliotheek - Docker Configuratie
+# Project Bibliotheek
 
 Dit project draait een PHP-webapplicatie met MariaDB, phpMyAdmin en Mailpit via Docker Compose.
 
 ## Voor Studenten
 
-1. Open deze repository op GitHub en klik rechtsboven op de knop Fork.
+1. Open deze repository op GitHub (https://github.com/NOVA-college-Haarlem/project-bibliotheek) en klik rechtsboven op de knop Fork.
 2. Bevestig de standaardinstellingen om de fork in je eigen GitHub-account aan te maken.
 3. Open daarna jouw fork, klik op de groene knop Code en kopieer het repository-adres (HTTPS).
-4. Clone jouw fork naar je lokale omgeving met:
+4. Clone jouw fork naar je lokale omgeving (in de map "Projecten" op je C-schijf) met:
 
 	```bash
 	git clone <gekopieerde-repository-url>
 	```
 
-## Diensten
+## Services
 
 - Webapp: http://localhost
-- MariaDB: interne host `mariadb` op poort `3306` (hostpoort `3307`)
 - phpMyAdmin: http://localhost:8000
-- Mailpit: http://localhost:8025
 
 ## Databaseconfiguratie
 
@@ -53,6 +51,6 @@ Verwacht resultaat:
 
 ## Dagelijks Gebruik
 
-- Start diensten: `docker compose up -d`
-- Stop diensten: `docker compose down`
+- Start services: `docker compose up -d`
+- Stop services: `docker compose down`
 
