@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $host = 'mariadb';
 $port = 3306;
-$dbname = 'testdb';
+$dbname = 'bibliotheek';
 $username = 'user';
 $password = 'password';
 
