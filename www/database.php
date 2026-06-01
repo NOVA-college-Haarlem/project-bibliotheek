@@ -1,23 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
+// Database configuration
 $host = 'mariadb';
-$port = 3306;
-$dbname = 'bibliotheek';
-$username = 'user';
+$user = 'root';
 $password = 'password';
+$database = 'bibliotheek';
 
-$dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset=utf8mb4";
+// Create connection (procedural, not object-oriented)
+$conn = mysqli_connect($host, $user, $password, $database);
 
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-
-try {
-    $pdo = new PDO($dsn, $username, $password, $options);
-} catch (PDOException $exception) {
-    die('Database connection failed: ' . $exception->getMessage());
+// Check connection
+if (!$conn) {
+    die('Connection failed: ' . mysqli_connect_error());
 }
