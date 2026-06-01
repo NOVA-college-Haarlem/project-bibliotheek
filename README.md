@@ -1,36 +1,47 @@
-# DOCKER TEMPLATE
+# Project Bibliotheek - Docker Configuratie
 
-## BASE Template
+Dit project draait een PHP-webapplicatie met MariaDB, phpMyAdmin en Mailpit via Docker Compose.
 
-You can use this template to create many repositories and have the default microservices at your disposal when developing your webapp.
+## Diensten
 
-## Start 
-**Follow these steps to make it work for your project**
+- Webapp: http://localhost
+- MariaDB: interne host `mariadb` op poort `3306` (hostpoort `3307`)
+- phpMyAdmin: http://localhost:8000
+- Mailpit: http://localhost:8025
 
-### Use Template
+## Databaseconfiguratie
 
-1. Press the green button that says `Use this template`
-2. Choose `Create a new repository`
-3. Now give your repo a correct name, i.e. myfirstproject
-4. Clone the project to your development machine
+De connectie met de database is geconfigureerd in `www/database.php`.
 
-### Set your project
+## Eerste keer opstarten
 
-1. Change the `.env`-file to match your project database name:
+1. Start alle containers:
 
-### Launch
+	```bash
+	docker compose up -d
+	```
 
-1. Launch your services/contaienrs by opening a `terminal` within the folder of your project
-2. Write: `docker compose up`
+2. Open phpMyAdmin via http://localhost:8000.
+3. Log in (bijvoorbeeld met `user` / `password`, of met root-gegevens).
+4. Selecteer de database `bibliotheek`.
+5. Importeer en voer het SQL-bestand `sql/boeken.sql` uit.
 
-## Available applications
+Na deze import is de tabel `boeken` beschikbaar en gevuld met voorbeelddata.
 
-### Web app
-To access your webapp go to http://localhost
-### PhpMyAdmin
+## Import Controleren
 
-To access your mysql database UI called PhpMyAdmin, go to http://localhost:8000
+Voer na het importeren van `sql/boeken.sql` deze query uit in phpMyAdmin (tab SQL):
 
-### Mailhog
-To access your mail UI called Mailhog, go to http://localhost:8025
+```sql
+SELECT COUNT(*) AS aantal_boeken FROM boeken;
+```
+
+Verwacht resultaat:
+
+- `aantal_boeken` moet `20` zijn
+
+## Dagelijks Gebruik
+
+- Start diensten: `docker compose up -d`
+- Stop diensten: `docker compose down`
 
